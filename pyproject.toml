@@ -1,0 +1,27 @@
+[build-system]
+requires = ["maturin>=1.5"]
+build-backend = "maturin"
+
+[project]
+name = "heavykeeper"
+version = "0.1.0"
+description = "Python bindings for the HeavyKeeper algorithm implemented in Rust"
+authors = [{name = "Patrick McGleenon"}]
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Rust",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.11"
+
+[project.urls]
+"Homepage" = "https://github.com/pmcgleen/heavykeeper-py"
+"Repository" = "https://github.com/pmcgleen/heavykeeper-py"
+"Bug Reports" = "https://github.com/pmcgleen/heavykeeper-py/issues"
+"Source" = "https://github.com/pmcgleen/heavykeeper-py"
+
+[project.optional-dependencies]
+test = ["pytest"]
