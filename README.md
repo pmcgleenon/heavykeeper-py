@@ -117,19 +117,13 @@ Check if the sketch is empty.
 
 ## Benchmarking
 
-The repository includes several benchmark scripts for performance testing:
+The repository includes a simnple script for performance testing:
 
 ### Word Count Benchmark
 
 ```bash
 # Basic benchmark with a text file
-python benchmark_wordcount.py -k 100 -f your_text_file.txt --time
-
-# Using different parsing methods
-python benchmark_wordcount.py -k 100 -f large_file.txt --method mmap --time
-
-# Custom parameters
-python benchmark_wordcount.py -k 50 -w 4096 -d 4 -y 0.8 -f data.txt --time
+python benchmark_wordcount.py -k 10 -f data/war_and_peace.txt --time
 ```
 
 ## Parameter Tuning
@@ -193,17 +187,6 @@ heavykeeper-py/
 └── README.md           # This file
 ```
 
-## Algorithm Details
-
-HeavyKeeper uses a sketch-based approach with the following components:
-
-1. **Count-Min Sketch**: Probabilistic counting structure
-2. **Heavy Part**: Stores the actual top-K items
-3. **Exponential Decay**: Ages out old items over time
-4. **Hash Functions**: Multiple hash functions for better accuracy
-
-The algorithm provides strong theoretical guarantees while maintaining excellent practical performance.
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -214,6 +197,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Based on the HeavyKeeper algorithm research
+- Based on the [HeavyKeeper](https://www.usenix.org/system/files/conference/atc18/atc18-gong.pdf) algorithm 
 - Built with [PyO3](https://pyo3.rs/) for Rust-Python interoperability
 - Uses [Maturin](https://github.com/PyO3/maturin) for building Python extensions
