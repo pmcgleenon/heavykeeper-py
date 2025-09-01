@@ -41,7 +41,7 @@ jobs:
               core.setFailed(`User ${context.actor} does not have permission to trigger releases. Required: admin or write access.`);
             }
             
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: github.event_name == 'workflow_dispatch'
         
       - name: Create manual release
@@ -79,7 +79,7 @@ jobs:
         python-version: ["3.11", "3.12"]
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
@@ -116,7 +116,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-13, macos-14]
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     
     - name: Set up Rust
       uses: dtolnay/rust-toolchain@stable
@@ -141,7 +141,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     
     - name: Set up Rust
       uses: dtolnay/rust-toolchain@stable
@@ -166,7 +166,7 @@ jobs:
     if: needs.release.outputs.should_build == 'true'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     
     - name: Set up Rust
       uses: dtolnay/rust-toolchain@stable
