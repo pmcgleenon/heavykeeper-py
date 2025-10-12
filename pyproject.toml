@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "heavykeeper"
-version = "0.2.1"
+version = "0.2.2"
 description = "Python bindings for the HeavyKeeper algorithm implemented in Rust"
 authors = [{name = "Patrick McGleenon"}]
 readme = "README.md"
