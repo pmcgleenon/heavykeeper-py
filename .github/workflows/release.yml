@@ -63,10 +63,10 @@ jobs:
         run: |
           if [[ "${{ github.event_name }}" == "release" ]] || [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             echo "should_build=true" >> $GITHUB_OUTPUT
-            echo "✅ Will build and publish"
+            echo "Will build and publish"
           else
             echo "should_build=false" >> $GITHUB_OUTPUT
-            echo "❌ Skipping build"
+            echo "Skipping build"
           fi
 
   test:
