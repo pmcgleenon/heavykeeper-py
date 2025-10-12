@@ -19,7 +19,7 @@ jobs:
   # Security checks and release creation
   release:
     runs-on: ubuntu-latest
-    if: github.repository == 'pmcgleen/heavykeeper-py'  # Only run in original repo
+    if: github.repository == 'pmcgleenon/heavykeeper-py'  # Only run in original repo
     outputs:
       should_build: ${{ steps.check.outputs.should_build }}
     steps:
