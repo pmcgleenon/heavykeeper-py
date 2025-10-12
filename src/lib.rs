@@ -30,20 +30,30 @@ impl HeavyKeeper {
     }
     
     /// Add an item to the sketch
-    /// 
+    ///
     /// Args:
     ///     item: The string item to add
-    /// 
+    ///     increment: The increment value (defaults to 1 if not provided)
+    ///
     /// Returns:
     ///     None
-    fn add(&mut self, item: &str) {
-        self.inner.add(&item.to_string());
+    #[pyo3(signature = (item, increment = 1))]
+    fn add(&mut self, item: &str, increment: u64) {
+        self.inner.add(&item.to_string(), increment);
     }
     
     /// Add multiple items efficiently (batch operation)
-    fn add_bulk(&mut self, items: Vec<String>) {
+    ///
+    /// Args:
+    ///     items: List of string items to add
+    ///     increment: The increment value for each item (defaults to 1)
+    ///
+    /// Returns:
+    ///     None
+    #[pyo3(signature = (items, increment = 1))]
+    fn add_bulk(&mut self, items: Vec<String>, increment: u64) {
         for item in items {
-            self.inner.add(&item);
+            self.inner.add(&item, increment);
         }
     }
     
@@ -118,12 +128,29 @@ impl HeavyKeeper {
     fn __len__(&self) -> usize {
         self.inner.list().len()
     }
+
+    /// Create a new HeavyKeeper with a specific random seed
+    ///
+    /// Args:
+    ///     k: The number of top items to track
+    ///     width: The width of the sketch (number of buckets)
+    ///     depth: The depth of the sketch (number of hash functions)
+    ///     decay: The decay factor for aging items (between 0.0 and 1.0)
+    ///     seed: Random seed for hash functions
+    ///
+    /// Returns:
+    ///     A new HeavyKeeper instance
+    #[staticmethod]
+    fn with_seed(k: usize, width: usize, depth: usize, decay: f64, seed: u64) -> PyResult<Self> {
+        let inner = ::heavykeeper::TopK::with_seed(k, width, depth, decay, seed);
+        Ok(HeavyKeeper { inner })
+    }
 }
 
 /// Python module for HeavyKeeper algorithm
 #[pymodule]
 fn heavykeeper(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<HeavyKeeper>()?;
-    m.add("__version__", "0.1.0")?;
+    m.add("__version__", "0.2.1")?;
     Ok(())
 } 

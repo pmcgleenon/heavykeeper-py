@@ -19,7 +19,7 @@ def test_basic_functionality():
         "hello", "world", "hello", "coding", "hello"
     ]
     
-    # Add all words
+    # Add all words (using default increment of 1)
     for word in test_words:
         hk.add(word)
     
@@ -86,6 +86,53 @@ def test_heavykeeper_parameters():
     assert len(hk2.list()) > 0
 
 
+def test_heavykeeper_increments():
+    """Test HeavyKeeper with custom increments."""
+    hk = HeavyKeeper(k=5, width=1024, depth=4, decay=0.9)
+
+    # Add items with different increments
+    hk.add("item1", 1)    # Default increment
+    hk.add("item2", 5)    # Custom increment
+    hk.add("item3", 10)   # Larger increment
+    hk.add("item1", 2)    # Add to existing item
+
+    # Test that counts reflect the increments
+    assert hk.count("item1") >= 3, "item1 should have count >= 3 (1+2)"
+    assert hk.count("item2") >= 5, "item2 should have count >= 5"
+    assert hk.count("item3") >= 10, "item3 should have count >= 10"
+
+    # Test bulk add with custom increment
+    hk.add_bulk(["bulk1", "bulk2", "bulk3"], 7)
+    assert hk.count("bulk1") >= 7, "bulk1 should have count >= 7"
+    assert hk.count("bulk2") >= 7, "bulk2 should have count >= 7"
+    assert hk.count("bulk3") >= 7, "bulk3 should have count >= 7"
+
+
+def test_heavykeeper_with_seed():
+    """Test HeavyKeeper with deterministic seed."""
+    # Create two instances with the same seed
+    hk1 = HeavyKeeper.with_seed(k=5, width=1024, depth=4, decay=0.9, seed=42)
+    hk2 = HeavyKeeper.with_seed(k=5, width=1024, depth=4, decay=0.9, seed=42)
+
+    # Add same data to both
+    test_words = ["apple", "banana", "cherry", "date", "elderberry"]
+    for word in test_words:
+        hk1.add(word, 1)
+        hk2.add(word, 1)
+
+    # Results should be identical (due to same seed)
+    list1 = hk1.list()
+    list2 = hk2.list()
+
+    assert len(list1) == len(list2), "Both instances should track same number of items"
+
+    # Convert to dictionaries for easier comparison
+    dict1 = {item: count for item, count in list1}
+    dict2 = {item: count for item, count in list2}
+
+    assert dict1 == dict2, "Results should be identical with same seed"
+
+
 def test_heavykeeper_edge_cases():
     """Test edge cases and error conditions."""
     # Test with empty string
@@ -93,13 +140,13 @@ def test_heavykeeper_edge_cases():
     hk.add("")
     assert hk.query(""), "Should track empty string"
     assert hk.count("") > 0, "Should have count for empty string"
-    
+
     # Test with very long string
     long_string = "a" * 1000
     hk.add(long_string)
     assert hk.query(long_string), "Should track long string"
     assert hk.count(long_string) > 0, "Should have count for long string"
-    
+
     # Test with special characters
     special_chars = "!@#$%^&*()_+-=[]{}|;':\",./<>?"
     hk.add(special_chars)
