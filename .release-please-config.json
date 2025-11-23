@@ -12,7 +12,7 @@
           "jsonpath": "$.package.version"
         },
         {
-          "type": "generic",
+          "type": "cargo-lock",
           "path": "Cargo.lock"
         }
       ]
