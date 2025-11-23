@@ -12,8 +12,9 @@
           "jsonpath": "$.package.version"
         },
         {
-          "type": "cargo-lock",
-          "path": "Cargo.lock"
+          "type": "generic",
+          "path": "Cargo.lock",
+          "version-regex": "(?P<prefix>name = \"heavykeeper\"\\nversion = \")(?P<version>[0-9]+\\.[0-9]+\\.[0-9]+)(?P<suffix>\")"
         }
       ]
     }
