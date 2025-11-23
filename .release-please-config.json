@@ -10,11 +10,6 @@
           "type": "toml",
           "path": "Cargo.toml",
           "jsonpath": "$.package.version"
-        },
-        {
-          "type": "generic",
-          "path": "Cargo.lock",
-          "version-regex": "(?P<prefix>name = \"heavykeeper\"\\nversion = \")(?P<version>[0-9]+\\.[0-9]+\\.[0-9]+)(?P<suffix>\")"
         }
       ]
     }
