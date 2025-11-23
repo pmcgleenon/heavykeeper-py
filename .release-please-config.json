@@ -4,7 +4,18 @@
     ".": {
       "release-type": "python",
       "package-name": "heavykeeper",
-      "include-component-in-tag": false
+      "include-component-in-tag": false,
+      "extra-files": [
+        {
+          "type": "toml",
+          "path": "Cargo.toml",
+          "jsonpath": "$.package.version"
+        },
+        {
+          "type": "generic",
+          "path": "Cargo.lock"
+        }
+      ]
     }
   },
   "changelog-sections": [
