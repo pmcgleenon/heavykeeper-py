@@ -24,4 +24,24 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           config-file: .release-please-config.json
-          manifest-file: .release-please-manifest.json 
+          manifest-file: .release-please-manifest.json
+
+  # Trigger Build and Publish workflow when a release is created
+  trigger-build:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Build and Publish workflow
+        uses: actions/github-script@v8
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'release.yml',
+              ref: '${{ needs.release-please.outputs.tag_name }}',
+              inputs: {
+                version: '${{ needs.release-please.outputs.tag_name }}'.replace('v', '')
+              }
+            }); 
