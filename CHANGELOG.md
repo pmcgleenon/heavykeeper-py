@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.3...v0.2.4) (2025-11-23)
+
+
+### Bug Fixes
+
+* add Build and Publish trigger to Release Please workflow ([075cc2d](https://github.com/pmcgleenon/heavykeeper-py/commit/075cc2daff87e3c5789c3f5bd8a7f3c2b494cca5))
+
 ## [0.2.3](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.2...v0.2.3) (2025-11-23)
 
 
