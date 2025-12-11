@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.4](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.3...v0.2.4) (2025-12-11)
+
+
+### Bug Fixes
+
+* add Build and Publish trigger to Release Please workflow ([075cc2d](https://github.com/pmcgleenon/heavykeeper-py/commit/075cc2daff87e3c5789c3f5bd8a7f3c2b494cca5))
+
+
+### Build System
+
+* **deps:** bump actions/checkout from 5 to 6 ([bec1ec2](https://github.com/pmcgleenon/heavykeeper-py/commit/bec1ec2b500986fc097bc61ad48a3863842ff598))
+* **deps:** bump actions/checkout from 5 to 6 ([fef72f2](https://github.com/pmcgleenon/heavykeeper-py/commit/fef72f2ee30d75d8670647a0e176b5bb402c75cf))
+* **deps:** bump pyo3 from 0.27.1 to 0.27.2 ([fb83d6a](https://github.com/pmcgleenon/heavykeeper-py/commit/fb83d6a2577fbcfad64203b441f9a9095d2b5e16))
+* **deps:** bump pyo3 from 0.27.1 to 0.27.2 ([2fe9106](https://github.com/pmcgleenon/heavykeeper-py/commit/2fe9106b32f80ba3b18e39f40a7bb8d8159c2599))
+
 ## [0.2.3](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.2...v0.2.3) (2025-11-23)
 
 
