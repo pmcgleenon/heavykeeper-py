@@ -139,6 +139,7 @@ jobs:
       with:
         name: wheels-${{ matrix.os }}
         path: dist
+        archive: false
 
   build-wheels-cross:
     name: Build wheels (Linux ARM64)
@@ -168,6 +169,7 @@ jobs:
       with:
         name: wheels-linux-aarch64
         path: dist
+        archive: false
 
   build-sdist:
     name: Build source distribution
@@ -191,6 +193,7 @@ jobs:
       with:
         name: sdist
         path: dist
+        archive: false
 
   publish:
     name: Publish to PyPI
@@ -209,7 +212,10 @@ jobs:
       with:
         path: dist
         merge-multiple: true
-    
+
+    - name: List dist contents
+      run: ls -la dist/
+
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
