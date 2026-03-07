@@ -135,11 +135,10 @@ jobs:
         manylinux: auto
     
     - name: Upload wheels
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@v4
       with:
         name: wheels-${{ matrix.os }}
         path: dist
-        archive: false
 
   build-wheels-cross:
     name: Build wheels (Linux ARM64)
@@ -165,11 +164,10 @@ jobs:
         manylinux: auto
     
     - name: Upload wheels
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@v4
       with:
         name: wheels-linux-aarch64
         path: dist
-        archive: false
 
   build-sdist:
     name: Build source distribution
@@ -189,11 +187,10 @@ jobs:
         args: --out dist
     
     - name: Upload sdist
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@v4
       with:
         name: sdist
         path: dist
-        archive: false
 
   publish:
     name: Publish to PyPI
@@ -208,7 +205,7 @@ jobs:
     
     steps:
     - name: Download all artifacts
-      uses: actions/download-artifact@v8
+      uses: actions/download-artifact@v4
       with:
         path: dist
         merge-multiple: true
