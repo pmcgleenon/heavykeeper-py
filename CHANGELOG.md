@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.5](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.4...v0.2.5) (2026-05-09)
+
+
+### Build System
+
+* **deps:** bump pyo3 from 0.28.2 to 0.28.3 ([287af31](https://github.com/pmcgleenon/heavykeeper-py/commit/287af31923c131a4289b9015eb486b2e96888991))
+* **deps:** bump pyo3 from 0.28.2 to 0.28.3 ([a05d700](https://github.com/pmcgleenon/heavykeeper-py/commit/a05d7005cdb4b8fd30d7601c8b051f59dd41ca65))
+
 ## [0.2.4](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.3...v0.2.4) (2026-03-07)
 
 
