@@ -43,15 +43,15 @@ dependencies = [
 name = "heavykeeper"
 version = "0.2.4"
 dependencies = [
- "heavykeeper 0.6.2",
+ "heavykeeper 0.6.5",
  "pyo3",
 ]
 
 [[package]]
 name = "heavykeeper"
-version = "0.6.2"
+version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "87da25939b6684db5c5ac6c5316e02c5dcd1e9ba8021e8f5fa1be35a8f32e4e5"
+checksum = "3d33e2d370d2fb6af6c78cbab7de6a06cdc76b82b0fd35eafc572b3e6d734382"
 dependencies = [
  "ahash",
  "rand",
