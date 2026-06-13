@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.2.5](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.4...v0.2.5) (2026-06-13)
+
+
+### Build System
+
+* **deps:** bump actions/github-script from 8 to 9 ([007569f](https://github.com/pmcgleenon/heavykeeper-py/commit/007569f5dc95d7bef8af80c07d458ceffc03aa7b))
+* **deps:** bump actions/github-script from 8 to 9 ([613f631](https://github.com/pmcgleenon/heavykeeper-py/commit/613f6315c9b3b83936f9d6eff0d62c805f1d82dd))
+* **deps:** bump googleapis/release-please-action from 4 to 5 ([adabbd9](https://github.com/pmcgleenon/heavykeeper-py/commit/adabbd91075f2e7628431e8831ecc355a76e4821))
+* **deps:** bump googleapis/release-please-action from 4 to 5 ([7cd3ca5](https://github.com/pmcgleenon/heavykeeper-py/commit/7cd3ca5b4d17b4a50ea41e219511734e819ea4d2))
+* **deps:** bump heavykeeper from 0.6.2 to 0.6.7 ([bcf967a](https://github.com/pmcgleenon/heavykeeper-py/commit/bcf967a34babc35b6ab9dd9ecead334b8496b2b3))
+* **deps:** bump heavykeeper from 0.6.2 to 0.6.7 ([a237f1d](https://github.com/pmcgleenon/heavykeeper-py/commit/a237f1d2f7469eb7043d4cbb8b6cb02150859cdc))
+* **deps:** bump pyo3 from 0.28.2 to 0.28.3 ([287af31](https://github.com/pmcgleenon/heavykeeper-py/commit/287af31923c131a4289b9015eb486b2e96888991))
+* **deps:** bump pyo3 from 0.28.2 to 0.28.3 ([a05d700](https://github.com/pmcgleenon/heavykeeper-py/commit/a05d7005cdb4b8fd30d7601c8b051f59dd41ca65))
+* **deps:** bump softprops/action-gh-release from 2 to 3 ([fad27a0](https://github.com/pmcgleenon/heavykeeper-py/commit/fad27a09c89a30e222b576724e8b5eabdf0ee9f9))
+* **deps:** bump softprops/action-gh-release from 2 to 3 ([b2830ec](https://github.com/pmcgleenon/heavykeeper-py/commit/b2830ec6df80fe456ebe8d84643969b127f4cfb8))
+* **deps:** bump the cargo group across 1 directory with 2 updates ([9af18fd](https://github.com/pmcgleenon/heavykeeper-py/commit/9af18fd0c6e2997ce477ba78cd3f9391a46eaf00))
+* **deps:** bump the cargo group across 1 directory with 2 updates ([4897fe6](https://github.com/pmcgleenon/heavykeeper-py/commit/4897fe6a890520fafea13c89080b7b05473530da))
+
 ## [0.2.4](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.3...v0.2.4) (2026-03-07)
 
 
