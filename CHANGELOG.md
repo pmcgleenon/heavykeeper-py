@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.6](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.5...v0.2.6) (2026-10-17)
+
+
+### Bug Fixes
+
+* release please github action ([f7877b7](https://github.com/pmcgleenon/heavykeeper-py/commit/f7877b766f5df799d4af0b72649dbaf920d9dede))
+* release please github action ([2d5e605](https://github.com/pmcgleenon/heavykeeper-py/commit/2d5e60598e7772d8ee28a36495af3a533c2ee876))
+
+
+### Build System
+
+* **deps:** bump heavykeeper from 0.6.7 to 0.7.1 ([ec773e6](https://github.com/pmcgleenon/heavykeeper-py/commit/ec773e6efdac334b7eb0a4b211af3e2c47559dc3))
+* **deps:** bump heavykeeper from 0.6.7 to 0.7.1 ([09aa238](https://github.com/pmcgleenon/heavykeeper-py/commit/09aa238b99a0ffbb046c8440813df9885c3692c6))
+* **deps:** bump pyo3 from 0.29.0 to 0.29.2 ([5fcf7f0](https://github.com/pmcgleenon/heavykeeper-py/commit/5fcf7f09f39bd195930ac61d1e0d1cb543a8ff98))
+* **deps:** bump pyo3 from 0.29.0 to 0.29.2 ([5ac56b9](https://github.com/pmcgleenon/heavykeeper-py/commit/5ac56b914b60af9fd4388384abba919ae08f5187))
+
 ## [0.2.5](https://github.com/pmcgleenon/heavykeeper-py/compare/v0.2.4...v0.2.5) (2026-06-13)
 
 
